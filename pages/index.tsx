@@ -26,7 +26,9 @@ export default function Home() {
       .catch((err: any) => console.error(err))
   }, messageId ? 1000 : null)
 
-  async function restoreImage() {
+  async function restoreImage(e: any) {
+    e.preventDefault()
+
     setRestoring(true)
 
     await fetch('/api/create', {
